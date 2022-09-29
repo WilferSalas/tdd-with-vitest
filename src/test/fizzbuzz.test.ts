@@ -1,25 +1,14 @@
+// @packages
 import {
   describe,
   expect,
   test,
 } from 'vitest';
 
-const fizzBuzz = (number) => {
-  if (typeof number !== 'number') throw new Error('Parameter provided is not a number');
-  if (Number.isNaN(number)) throw new Error('Parameter provided is not a number');
-
-  if (number % 3 === 0 && number % 5 === 0) return 'fizzbuzz';
-  if (number % 3 === 0) return 'fizz';
-  if (number % 5 === 0) return 'buzz';
-
-  return number;
-};
+// @scripts
+import fizzBuzz from '../utils/fizzbuzz';
 
 describe('fizzbuzz', () => {
-  test('should be a function', () => {
-    expect(typeof fizzBuzz).toBe('function');
-  });
-
   test('should throw an error if the provided parameter is not a number', () => {
     expect(() => fizzBuzz('hey')).toThrowError();
   });
@@ -40,6 +29,7 @@ describe('fizzbuzz', () => {
   test('should return buzz if provided number is multiple of 5', () => {
     expect(fizzBuzz(5)).toBe('buzz');
   });
+
   test('should return fizzbuzz if provided number is multiple of 3 and 5', () => {
     expect(fizzBuzz(15)).toBe('fizzbuzz');
   });
