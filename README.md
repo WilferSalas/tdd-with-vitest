@@ -4,7 +4,7 @@
 
 ## Description:
 
-React v18 with TypeScript, Vite and MUI v5
+React v18 with TypeScript, Vite, Vitest and MUI v5
 
 # Requeriments:
 
