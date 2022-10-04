@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-const reConfigure = (from?: string, to?: string) => {
+const CanReconfigure = (from?: string, to?: string) => {
   const uniqueLetters = (word: string) => new Set(word).size
 
   if (typeof from !== 'string' || typeof to !== 'string') throw new Error('from is not a string');
@@ -9,24 +9,24 @@ const reConfigure = (from?: string, to?: string) => {
   return true;
 }
 
-describe('Can reconfigure word', () => {
+describe('Can CanReconfigure word', () => {
   test('should throw an error if first parameter is missing', () => {
-    expect(() => reConfigure()).toThrowError('');
+    expect(() => CanReconfigure()).toThrowError('');
   });
 
   test('should throw an error if second parameter is missing', () => {
-    expect(() => reConfigure('a')).toThrowError('');
+    expect(() => CanReconfigure('a')).toThrowError('');
   });
 
   test('should return a boolean', () => {
-    expect(reConfigure('A', 'B')).toBeTypeOf('boolean');
+    expect(CanReconfigure('A', 'B')).toBeTypeOf('boolean');
   });
 
   test('should return false if the supplied strings have a different length', () => {
-    expect(reConfigure('CON', 'JUUN')).toBe(false);
+    expect(CanReconfigure('CON', 'JUUN')).toBe(false);
   });
 
   test('should return false if the supplied strings have a different number of unique letters', () => {
-    expect(reConfigure('CON', 'JUU')).toBe(false);
+    expect(CanReconfigure('CON', 'JUU')).toBe(false);
   });
 });
