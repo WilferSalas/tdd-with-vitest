@@ -22,6 +22,8 @@ const Calculator = () => {
 
   const handleOnSubmit = () => setInputValue(evaluate(inputValue));
 
+  const handleOnClear = () => setInputValue('');
+
   return (
     <Container maxWidth="md">
       <TextField
@@ -37,10 +39,10 @@ const Calculator = () => {
         <Grid container item xs={9} spacing={1}>
           <Grid item xs={4}>
             <Button
-              disabled
               fullWidth
               sx={{ p: 3 }}
               variant="outlined"
+              onClick={handleOnClear}
             >
               C
             </Button>
